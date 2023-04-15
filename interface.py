@@ -71,8 +71,8 @@ nice_red = (166, 41, 22)
 shockwaves = []
 
 # les difficultées dispo
-diff_names = ["Facile", "Normal", "Difficile", "BRUTAL EXTREME"]
-lives_names = ["Désactivées", "1", "2", "3 (Max)"]
+diff_names = ["Easy", "Normal", "Hard", "BRUTAL EXTREME"]
+lives_names = ["Disabled", "1", "2", "3 (Max)"]
 
 # la classe "game_vars" issue du script main.py
 g_vars = 0
@@ -107,18 +107,18 @@ def menu():
 
     draw_button(((fen_axex/2), fen_axey/2 - 70), (250*tp, 50*tp), "Mode: " + diff_names[g_vars.difficulty], diff_select)
 
-    txtVies = "Vies : " + lives_names[g_vars.livesCount]
+    txtVies = "Lives : " + lives_names[g_vars.livesCount]
     draw_button(((fen_axex/2), fen_axey/2), (250*tp, 50*tp), txtVies, lives_setting)
 
-    draw_button((fen_axex/2, fen_axey/2 + 70), (250*tp, 50*tp), "Jouer", jouer)
+    draw_button((fen_axex/2, fen_axey/2 + 70), (250*tp, 50*tp), "Start", jouer)
 
-    draw_text(tiny_font, "Clic-gauche pour détruire une case",
+    draw_text(tiny_font, "Left-click to reveal a cell",
               (fen_axex/2, 410), lerp_vector(bckg, dark_bckg, tp), bckg)
-    draw_text(tiny_font, "Clic-droit pour poser un drapeau",
+    draw_text(tiny_font, "Right-click to place a flag",
               (fen_axex/2, 430), lerp_vector(bckg, dark_bckg, tp), bckg)
-    draw_text(tiny_font, "Le nombre sur une case = le nombre de mines qui l'entoure",
+    draw_text(tiny_font, "The number on a cell = the number of mines surrounding it",
               (fen_axex/2, 450), lerp_vector(bckg, dark_bckg, tp), bckg)
-    draw_text(tiny_font, "Bonne chance !", (fen_axex/2, 480),
+    draw_text(tiny_font, "Good luck!", (fen_axex/2, 480),
               lerp_vector(bckg, dark_bckg, tp), bckg)
 
 # SCENE 2 - Fonction qui dessine le jeu
@@ -183,9 +183,9 @@ def game():
 
     # Bouton (on l'adapte selon le contexte)
     if g_vars.game_state == 0:
-        draw_button((fen_axex/2, 485), (140*tp, 40*tp), "Abandonner", back)
+        draw_button((fen_axex/2, 485), (140*tp, 40*tp), "Abandon", back)
     else:
-        draw_button((fen_axex/2, 485), (140*tp, 40*tp), "Retour", back)
+        draw_button((fen_axex/2, 485), (140*tp, 40*tp), "Back", back)
 
 # ACTIONS DES BOUTONS ---------
 
